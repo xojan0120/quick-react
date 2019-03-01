@@ -14,6 +14,7 @@ import MyProp, { Member } from './MyProp'; // MemberはMyProp.js内で定義し�
 import MyHelloDef from './MyHelloDef';
 import MyArticle from './MyArticle';
 import MyNew from './MyNew';
+import MyEvent from './MyEvent';
 // キャッシュのためのサービスをインポート
 import * as serviceWorker from './serviceWorker';
 
@@ -249,30 +250,38 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // --------------------------------------------------------------------------------------
 // 繰り返し処理/条件分岐処理
 // --------------------------------------------------------------------------------------
-const articles = [
-  {
-    url: 'https://www.atmarkit.co.jp/ait/series/9383/',
-    title: 'Angular TIPS',
-    description: '人気のJavaScriptフレームワーク「Angular」の目的別リファレンス',
-    isNew: true
-  },
-  {
-    url: 'https://www.atmarkit.co.jp/ait/series/9384/',
-    title: 'HOGE',
-    description: 'HUGA',
-    isNew: true
-  },
-];
-const list =
-      articles.map(
-        // 配列にはkey属性を持たせないとワーニングが出る
-        //(article) => <MyArticle {...article} key={article.url} />
-        
-        // 適当なkey属性がない場合は、mapメソッドのインデックス値でもOK
-        (article,index) => <MyArticle {...article} key={index} />
-      )
+//const articles = [
+//  {
+//    url: 'https://www.atmarkit.co.jp/ait/series/9383/',
+//    title: 'Angular TIPS',
+//    description: '人気のJavaScriptフレームワーク「Angular」の目的別リファレンス',
+//    isNew: true
+//  },
+//  {
+//    url: 'https://www.atmarkit.co.jp/ait/series/9384/',
+//    title: 'HOGE',
+//    description: 'HUGA',
+//    isNew: true
+//  },
+//];
+//const list =
+//      articles.map(
+//        // 配列にはkey属性を持たせないとワーニングが出る
+//        //(article) => <MyArticle {...article} key={article.url} />
+//        
+//        // 適当なkey属性がない場合は、mapメソッドのインデックス値でもOK
+//        (article,index) => <MyArticle {...article} key={index} />
+//      )
+//ReactDOM.render(
+//  <dl>{list}</dl>,
+//  document.getElementById('root2')
+//);
+
+// --------------------------------------------------------------------------------------
+// イベント処理の基本
+// --------------------------------------------------------------------------------------
 ReactDOM.render(
-  <dl>{list}</dl>,
+  <MyEvent greet="Hello" />,
   document.getElementById('root2')
 );
   
